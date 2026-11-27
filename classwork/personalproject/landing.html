@@ -1,0 +1,504 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Wizzyint - Learn Without Limits</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: rgb(112, 65, 190);
+            --secondary-color: rgb(90, 130, 230);
+            --third-color: rgb(190, 160, 240);
+            --fourth-color: rgb(180, 235, 215);
+
+            --text-color: rgb(30, 30, 45);
+            --white-color: rgb(255, 255, 255);
+            --main-spacing: 25px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: var(--text-color);
+        }
+
+
+        .container {
+            width: 100%;
+            min-height: 100vh;
+
+            background: linear-gradient(
+                120deg,
+                rgb(225, 245, 240),
+                rgb(215, 225, 255),
+                rgb(230, 210, 250)
+            );
+
+            padding: 25px 7%;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .logo {
+            font-size: 30px;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: bold;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .nav-buttons a {
+            text-decoration: none;
+            background-color: rgb(15, 15, 20);
+            color: white;
+            padding: 13px 22px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+
+            min-height: 650px;
+            padding: 60px 0;
+        }
+
+        .hero-image {
+            width: 48%;
+            text-align: center;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 480px;
+            height: 430px;
+            object-fit: cover;
+            border-radius: 30px;
+        }
+
+        .hero-content {
+            width: 52%;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: rgb(235, 225, 255);
+            color: var(--primary-color);
+            padding: 12px 20px;
+            border-radius: 30px;
+            margin-bottom: 25px;
+            font-weight: bold;
+        }
+
+        .hero-content h1 {
+            font-size: 55px;
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .hero-content h1 span {
+            color: var(--primary-color);
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            line-height: 1.7;
+            color: rgb(75, 75, 90);
+            margin-bottom: 25px;
+        }
+
+        .get-started {
+            display: inline-block;
+            text-decoration: none;
+            background-color: rgb(15, 15, 20);
+            color: white;
+            padding: 16px 30px;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+
+        .get-started:hover {
+            background-color: var(--primary-color);
+        }
+
+        .about {
+            padding: 100px 7%;
+            text-align: center;
+            background-color: rgb(255, 255, 255);
+        }
+
+        .section-title {
+            font-size: 38px;
+            margin-bottom: 20px;
+        }
+
+        .section-title span {
+            color: var(--primary-color);
+        }
+
+        .about p {
+            max-width: 800px;
+            margin: auto;
+            font-size: 17px;
+            line-height: 1.8;
+            color: rgb(90, 90, 100);
+        }
+
+        .courses {
+            padding: 90px 7%;
+            background-color: rgb(245, 242, 255);
+            text-align: center;
+        }
+
+        .course-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .course-card {
+            width: 250px;
+            background-color: white;
+            padding: 30px 20px;
+            border-radius: 15px;
+            text-align: left;
+            box-shadow: 0 5px 20px rgb(0, 0, 0, 0.06);
+        }
+
+        .course-card h3 {
+            color: var(--primary-color);
+            font-size: 21px;
+            margin-bottom: 15px;
+        }
+
+        .course-card p {
+            color: rgb(95, 95, 105);
+            line-height: 1.6;
+        }
+
+        .footer {
+            background-color: rgb(20, 20, 35);
+            color: white;
+            padding: 45px 7%;
+            text-align: center;
+        }
+
+        .footer h2 {
+            color: rgb(190, 160, 240);
+            margin-bottom: 15px;
+        }
+
+        .footer p {
+            color: rgb(200, 200, 210);
+        }
+
+        .footer a {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            margin: 20px 10px 0;
+        }
+
+        @media (max-width: 800px) {
+
+            .nav {
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-image,
+            .hero-content {
+                width: 100%;
+            }
+
+            .hero-content h1 {
+                font-size: 38px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+
+        <nav class="nav">
+
+            <a href="#home" class="logo">Wizzyint.</a>
+
+            <div class="nav-links">
+
+                <a href="#home">Home</a>
+
+                <a href="#about">About Us</a>
+
+                <a href="#courses">Courses</a>
+
+            </div>
+
+            <div class="nav-buttons">
+
+                <a href="login.html">Login</a>
+
+                <a href="signup.html">Sign Up</a>
+
+            </div>
+
+        </nav>
+
+        <section class="hero" id="home">
+
+            <div class="hero-image">
+
+                <img src="/classwork/images/Screenshot 2026-11-25 230349.png" alt="image">
+
+            </div>
+
+            <div class="hero-content">
+
+                <div class="tag">
+
+                    Learn • Build • Grow
+
+                </div>
+
+                <h1>
+
+                    Professionalize Yourself in <span>Any Field</span>
+
+                </h1>
+
+                <p>
+
+                    Welcome to Wizzyint, your all-in-one learning
+                    platform designed to help you discover new skills,
+                    access quality courses and achieve your goals.
+
+                    Learn at your own pace, develop your talents
+                    and prepare yourself for the future.
+
+                </p>
+
+                <a href="signup.html" class="get-started">
+
+                    Get Started →
+
+                </a>
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <section class="about" id="about">
+
+        <h2 class="section-title">
+
+            About <span>Wizzyint</span>
+
+        </h2>
+
+        <p>
+
+            Wizzyint is an online learning platform created to make
+            education, technology and personal development more
+            accessible.
+
+            Our goal is to connect learners with valuable knowledge,
+            practical skills and opportunities to grow.
+
+            Whether you are a student, graduate or someone looking
+            to learn something new, Wizzyint provides a platform
+            where your journey begins.
+
+        </p>
+
+    </section>
+
+    <section class="courses" id="courses">
+
+        <h2 class="section-title">
+
+            Explore Our <span>Courses</span>
+
+        </h2>
+
+        <p>
+
+            Discover skills that can help shape your future.
+
+        </p>
+
+
+        <div class="course-container">
+
+            <div class="course-card">
+
+                <h3>Web Development</h3>
+
+                <p>
+
+                    Learn HTML, CSS, JavaScript and how to
+                    build modern websites.
+
+                </p>
+
+            </div>
+
+
+            <div class="course-card">
+
+                <h3>Programming</h3>
+
+                <p>
+
+                    Develop your programming knowledge
+                    and learn how to solve problems with code.
+
+                </p>
+
+            </div>
+
+
+            <div class="course-card">
+
+                <h3>Cybersecurity</h3>
+
+                <p>
+
+                    Explore digital security, networking
+                    and cybersecurity fundamentals.
+
+                </p>
+
+            </div>
+
+
+            <div class="course-card">
+
+                <h3>Artificial Intelligence</h3>
+
+                <p>
+
+                    Discover AI, machine learning
+                    and emerging technologies.
+
+                </p>
+
+            </div>
+
+
+            <div class="course-card">
+
+                <h3>Graphic Design</h3>
+
+                <p>
+
+                    Learn visual communication,
+                    creative design and digital graphics.
+
+                </p>
+
+            </div>
+
+
+            <div class="course-card">
+
+                <h3>Business & Entrepreneurship</h3>
+
+                <p>
+
+                    Develop business knowledge,
+                    entrepreneurship and management skills.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer class="footer">
+
+        <h2>Wizzyint.</h2>
+
+        <p>
+
+            Learn Today. Build Tomorrow.
+
+        </p>
+
+        <a href="#home">Home</a>
+
+        <a href="#about">About Us</a>
+
+        <a href="#courses">Courses</a>
+
+        <a href="signup.html">Join Us</a>
+
+    </footer>
+
+</body>
+
+</html>

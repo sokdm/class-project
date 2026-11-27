@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Orders - SHOP EASE</title>
+    <link rel="stylesheet" href="/classwork/css/all.css">
+    <style>
+        *{ box-sizing: border-box; }
+        body{
+            margin: 0;
+            background-color: white;
+            font-family: arial;
+            color: #1f2a28;
+        }
+
+        .topbar{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 14px 30px;
+            border-bottom: 1px solid #ddd;
+        }
+        .brand{
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: #1f2a28;
+            text-decoration: none;
+        }
+        .menu{
+            display: flex;
+            gap: 40px;
+        }
+        .menu a{
+            color: black;
+            text-decoration: none;
+        }
+        .menu a:hover{ text-decoration: underline; }
+        .icons{
+            display: flex;
+            gap: 22px;
+            font-size: 24px;
+        }
+        .icons a{ color: #1f2a28; }
+
+        .search{
+            position: relative;
+            max-width: 520px;
+            margin: 24px auto;
+            padding: 0 20px;
+        }
+        .search i{
+            position: absolute;
+            left: 38px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #888;
+        }
+        .search input{
+            width: 100%;
+            padding: 12px 18px 12px 44px;
+            border: 1px solid #ccc;
+            border-radius: 30px;
+            font-size: 16px;
+        }
+
+        .layout{
+            display: flex;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 40px 20px;
+        }
+
+        .sidebar{
+            width: 230px;
+            flex-shrink: 0;
+            align-self: flex-start;
+            position: sticky;
+            top: 20px;
+            background-color: #fafafa;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 14px;
+        }
+        .sidebar a{
+            display: block;
+            padding: 12px 14px;
+            border-radius: 8px;
+            color: #1f2a28;
+            text-decoration: none;
+        }
+        .sidebar a.active{
+            background-color: #12403a;
+            color: white;
+        }
+        .sidebar i{ width: 22px; }
+
+        .container{
+            flex: 1;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .order-card{
+            background-color: white;
+            border: 1px solid black;
+            border-left: 8px solid black;
+            border-radius: 10px;
+            padding: 30px 34px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+        }
+        .order-card h3{ font-size: 24px; margin: 0 0 12px 0; }
+        .order-card p{ font-size: 18px; margin: 0 0 18px 0; }
+
+        .status{
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .pending{ background-color: yellow; color: black; }
+        .shipped{ background-color: blue; color: white; }
+        .delivered{ background-color: green; color: white; }
+
+        #tracking-section{
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 28px;
+            margin-top: 30px;
+        }
+        .steps{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .step{
+            flex: 1;
+            text-align: center;
+            font-size: 14px;
+            color: #8a9693;
+        }
+        .step-circle{
+            width: 32px;
+            height: 32px;
+            line-height: 32px;
+            border-radius: 50%;
+            background-color: #d9dfdd;
+            margin: 0 auto 8px auto;
+            font-weight: bold;
+        }
+        .step.done{ color: #1f2a28; }
+        .step.done .step-circle{
+            background-color: #12403a;
+            color: white;
+        }
+
+     
+    </style>
+</head>
+<body>
+
+    <header class="topbar">
+        <a href="home.html" class="brand"><i class="fa-solid fa-cart-shopping"></i> SHOP EASE</a>
+        <nav class="menu">
+            <a href="home.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="categories.html">Categories</a>
+            <a href="about.html">About</a>
+        </nav>
+        <div class="icons">
+            <a href="profile.html"><i class="fa-solid fa-circle-user"></i></a>
+            <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+    </header>
+
+    <form class="search" action="products.html" method="get">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" name="q" placeholder="Search products...">
+    </form>
+
+    <div class="layout">
+
+        <aside class="sidebar">
+            <a href="order.html" class="active"><i class="fa-solid fa-dolly"></i> My Orders</a>
+        </aside>
+
+        <div class="container">
+            <h1 id="page-title"><i class="fa-solid fa-dolly"></i> My Orders</h1>
+
+            <div class="order-card">
+                <h3>Order #1006</h3>
+                <p>2 items - Total: $45,000</p>
+                <span class="status pending"><i class="fa-solid fa-clock"></i> Pending</span>
+            </div>
+
+            <div class="order-card">
+                <h3>Order #1009</h3>
+                <p>1 item - Total: $18,000</p>
+                <span class="status shipped"><i class="fa-solid fa-truck-fast"></i> Shipped</span>
+            </div>
+
+            <div class="order-card">
+                <h3>Order #1007</h3>
+                <p>5 items - Total: $75,000</p>
+                <span class="status delivered"><i class="fa-solid fa-circle-check"></i> Delivered</span>
+            </div>
+
+            <div id="tracking-section">
+                <h2>Track Order #1009</h2>
+                <div class="steps">
+                    <div class="step done"><div class="step-circle">1</div>Order placed</div>
+                    <div class="step done"><div class="step-circle">2</div>Packed</div>
+                    <div class="step done"><div class="step-circle">3</div>Shipped</div>
+                    <div class="step"><div class="step-circle">4</div>Delivered</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

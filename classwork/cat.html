@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/all.css">
+   <style>
+
+    body{ margin: 0; background-color: white;}
+
+    .container{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .cards{ 
+        width: 250px;
+        height: 500px;
+        border-radius: 20px;
+        padding: 12px 0;
+    }
+
+    .sub-item{
+        height: 80%;
+        background-color: white;
+        border-radius: 18px;
+        padding: 50px;
+        font-family: Arial, sans-serif;
+    }
+
+    .basic{
+        background-color: red;
+    }
+
+    .standard{
+        background-color: royalblue;
+        height: 550px;
+    }
+
+    .premium{
+        background-color: orange;
+    }
+    
+    .title{
+        text-align: center;
+        font-size: 32px;
+    }
+
+    .red-text{
+        color: red;
+    }
+
+    .blue-text{
+        color: royalblue;
+    }
+
+    .orange-text{
+        color: orange;
+    }
+
+    .icon{
+        margin-right: 12px;
+    }
+
+    .sub-text{
+        font-size: 14px;
+        margin: 18px 0;
+    }
+
+    .green-text{
+        color: green;
+    }
+
+    .btn{
+        display: block;
+        margin-top: 30px;
+        padding: 12px;
+        text-align: center;
+        text-decoration: none;
+        color: white;
+        border-radius: 7px;
+        font-size: 12px;
+    }
+
+    .red-bg{
+        background-color: red;
+    }
+
+    .blue-bg{
+        background-color: royalblue;
+    }
+
+    .orange-bg{
+        background-color: orange;
+    }
+   </style>
+</head>
+<body>
+    <div class="container">
+        <div class="cards basic">
+        <div class="sub-item">
+            <h2 class="title red-text">Basic</h2>
+            <p class="sub-text"><i class="fa-solid fa-check icon green-text"></i>Sample Text Here</p>
+            <p class="sub-text"><i class="fa-solid fa-check icon green-text"></i>Other Text Title</p>
+            <p class="sub-text"><i class="fa-solid fa-check icon green-text"></i><span>Text Space Goes Here</span></p>
+            <p class="sub-text"><i class="fa-solid fa-xmark icon red-text"></i>Description Space</p>
+            <p class="sub-text"><i class="fa-solid fa-xmark icon red-text"></i>Sample Text Here</p>
+            <p class="sub-text"><i class="fa-solid fa-xmark icon red-text"></i>Other Text Title</p>
+            <p class="sub-text"><i class="fa-solid fa-xmark icon red-text"></i>Text Space Goes Here</p>
+             <a class="btn red-bg">SHOP NOW</a>
+            </div>
+        </div>
+
+        <div class="cards standard">
+        <div class="sub-item">
+            <h2 class="title blue-text">Standard</h2>
+            <p class="sub-text"><i class="fa-solid fa-check icon green-text"></i>Sample Text Here</p>
+            <p class="sub-text"><i class="fa-solid fa-check icon green-text"></i>Other Text Title</p>
+            <p class="sub-text"><i class="fa-solid fa-check icon green-text"></i>Text Space Goes Here</p>
+            <p class="sub-text"><i class="fa-solid fa-check icon green-text"></i>Description Space</p>
+            <p class="sub-text"><i class="fa-solid fa-check icon green-text"></i>Sample Text Here</p>
+            <p class="sub-text"><i class="fa-solid fa-xmark icon red-text"></i>Other Text Title</p>
+            <p class="sub-text"><i class="fa-solid fa-xmark icon red-text"></i>Text Space Goes Here</p>
+            <a class="btn blue-bg">SHOP NOW</a>
+            </div>
+        </div>
+
+        <div class="cards premium">
+        <div class="sub-item">
+            <h2 class="title orange-text">Premium</h2>
+            <p class="sub-text"><i class="fa-solid fa-check icon green-text"></i>Sample Text Here</p>
+            <p class="sub-text"><i class="fa-solid fa-check icon green-text"></i>Other Text Title</p>
+            <p class="sub-text"><i class="fa-solid fa-check icon green-text"></i>Text Space Goes Here</p>
+            <p class="sub-text"><i class="fa-solid fa-check icon green-text"></i>Description Space</p>
+            <p class="sub-text"><i class="fa-solid fa-check icon green-text"></i>Sample Text Here</p>
+            <p class="sub-text"><i class="fa-solid fa-xmark icon red-text"></i>Other Text Title</p>
+            <p class="sub-text"><i class="fa-solid fa-xmark icon red-text"></i>Text Space Goes Here</p>
+            <a class="btn orange-bg">SHOP NOW</a>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
